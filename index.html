@@ -320,12 +320,12 @@
             z-index: 10;
             text-align: center;
             background: #f5f5f0;
-            padding: 70px 50px;
+            padding: 50px 60px;
             border-radius: 0;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 700px;
-            width: 90%;
-            max-height: 85vh;
+            max-width: 720px;
+            width: 88%;
+            max-height: 80vh;
             margin: 0 auto;
             animation: fadeIn 1s ease-in;
             border: 12px solid;
@@ -343,23 +343,24 @@
         .container::before {
             content: '';
             position: absolute;
-            top: -15px;
-            left: -15px;
-            right: -15px;
-            bottom: -15px;
-            border: 3px solid #1e7e34;
+            top: -12px;
+            left: -12px;
+            right: -12px;
+            bottom: -12px;
+            border: 2px solid #1e7e34;
             pointer-events: none;
+            opacity: 0.5;
         }
 
         .container::after {
             content: '🕌 🌙 ✨';
             position: absolute;
-            top: -40px;
+            top: -35px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 2em;
-            letter-spacing: 20px;
-            opacity: 0.8;
+            font-size: 1.8em;
+            letter-spacing: 15px;
+            opacity: 0.7;
             pointer-events: none;
         }
 
@@ -368,36 +369,36 @@
             position: absolute;
             top: 20px;
             left: 20px;
-            font-size: 2.5em;
+            font-size: 2.2em;
             color: #1e7e34;
-            opacity: 0.3;
+            opacity: 0.25;
         }
 
         .container-corner-tr {
             position: absolute;
             top: 20px;
             right: 20px;
-            font-size: 2.5em;
+            font-size: 2.2em;
             color: #1e7e34;
-            opacity: 0.3;
+            opacity: 0.25;
         }
 
         .container-corner-bl {
             position: absolute;
             bottom: 20px;
             left: 20px;
-            font-size: 2.5em;
+            font-size: 2.2em;
             color: #1e7e34;
-            opacity: 0.3;
+            opacity: 0.25;
         }
 
         .container-corner-br {
             position: absolute;
             bottom: 20px;
             right: 20px;
-            font-size: 2.5em;
+            font-size: 2.2em;
             color: #1e7e34;
-            opacity: 0.3;
+            opacity: 0.25;
         }
 
         @keyframes fadeIn {
@@ -407,44 +408,52 @@
 
         .container h1 {
             color: #1e7e34;
-            font-size: 2.8em;
-            margin-bottom: 15px;
+            font-size: 2.6em;
+            margin-top: 10px;
+            margin-bottom: 12px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
             font-weight: bold;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
 
         .container h1::before {
             content: 'Selamat\a';
             white-space: pre;
             display: block;
-            font-size: 0.8em;
+            font-size: 0.75em;
             color: #b8860b;
-            margin-bottom: 5px;
-            letter-spacing: 1px;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+            font-weight: 500;
         }
 
         .arabic-text {
-            font-size: 1.3em;
+            font-size: 1.2em;
             color: #1e7e34;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
+            margin-top: 0;
             font-weight: bold;
             letter-spacing: 1px;
         }
 
         .subtitle-greeting {
             color: #666;
-            font-size: 1em;
-            margin-bottom: 25px;
+            font-size: 0.95em;
+            margin-bottom: 20px;
             font-style: italic;
+            letter-spacing: 0.5px;
         }
 
         .container p {
             color: #333;
-            font-size: 1.1em;
-            line-height: 1.8;
-            margin-bottom: 25px;
+            font-size: 1em;
+            line-height: 1.75;
+            margin-bottom: 20px;
             text-align: justify;
+        }
+
+        .container p:last-of-type {
+            margin-bottom: 0;
         }
 
         .greeting {
@@ -514,44 +523,58 @@
 
         @media (max-width: 768px) {
             .container {
-                padding: 40px 25px;
+                padding: 40px 30px;
                 width: 92%;
                 max-height: 80vh;
                 border-width: 10px;
             }
 
-            .name-container {
-                padding: 45px 30px;
-                width: 92%;
-                border-radius: 15px;
+            .container::before {
+                top: -10px;
+                left: -10px;
+                right: -10px;
+                bottom: -10px;
+                border-width: 1.5px;
             }
 
-            .name-container h1 {
-                font-size: 2em;
-                margin-bottom: 8px;
+            .container::after {
+                top: -32px;
+                font-size: 1.5em;
+                letter-spacing: 12px;
             }
 
-            .name-container .subtitle {
+            .container h1 {
+                font-size: 2.2em;
+                margin-bottom: 10px;
+            }
+
+            .container h1::before {
+                font-size: 0.68em;
+                margin-bottom: 6px;
+            }
+
+            .container p {
                 font-size: 0.95em;
+                line-height: 1.6;
                 margin-bottom: 15px;
             }
 
-            .name-container p {
-                font-size: 0.92em;
-                line-height: 1.5;
+            .arabic-text {
+                font-size: 1.1em;
                 margin-bottom: 15px;
             }
 
-            .emoji {
-                font-size: 2.8em;
-                margin-bottom: 12px;
+            .subtitle-greeting {
+                font-size: 0.9em;
+                margin-bottom: 15px;
             }
 
-            .container {
-                padding: 40px 25px;
-                width: 92%;
-                max-height: 80vh;
-                border-width: 10px;
+            .container-corner-tl,
+            .container-corner-tr,
+            .container-corner-bl,
+            .container-corner-br {
+                font-size: 1.8em;
+                opacity: 0.2;
             }
 
             .container::before {
