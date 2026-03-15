@@ -270,34 +270,35 @@
 
         .lantern {
             position: absolute;
-            width: 30px;
-            height: 40px;
-            border: 2px solid #ffd700;
+            width: 22px;
+            height: 30px;
+            border: 1.5px solid #ffd700;
             border-radius: 50% 50% 40% 40%;
-            background: radial-gradient(circle at 30% 30%, rgba(255, 215, 0, 0.8), rgba(255, 165, 0, 0.6));
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.8), inset 0 0 10px rgba(255, 215, 0, 0.5);
+            background: radial-gradient(circle at 30% 30%, rgba(255, 215, 0, 0.7), rgba(255, 165, 0, 0.5));
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.6), inset 0 0 8px rgba(255, 215, 0, 0.4);
             animation: swing 3s ease-in-out infinite;
+            opacity: 0.6;
         }
 
         .lantern::before {
             content: '';
             position: absolute;
-            top: -10px;
+            top: -8px;
             left: 50%;
             transform: translateX(-50%);
-            width: 8px;
-            height: 10px;
+            width: 6px;
+            height: 8px;
             background: #8b4513;
             border-radius: 2px;
         }
 
         .ketupat {
             position: absolute;
-            width: 25px;
-            height: 35px;
+            width: 18px;
+            height: 26px;
             background: linear-gradient(45deg, #2ecc71 0%, #27ae60 100%);
             clip-path: polygon(50% 0%, 100% 38%, 50% 100%, 0% 38%);
-            opacity: 0.7;
+            opacity: 0.5;
             animation: float 4s ease-in-out infinite;
         }
 
@@ -505,7 +506,7 @@
 
         @media (max-width: 768px) {
             body {
-                padding: 10px;
+                padding: 5px;
             }
 
             .page {
@@ -516,127 +517,32 @@
             }
 
             .container {
-                padding: 50px 20px;
+                padding: 35px 18px;
                 width: 100%;
                 max-width: 100%;
                 margin: 0;
-                border-width: 10px;
+                border-width: 8px;
                 max-height: 100vh;
                 overflow-y: auto;
             }
 
-            .container h1 {
-                font-size: 2em;
-                margin-bottom: 8px;
+            .container::before {
+                top: -8px;
+                left: -8px;
+                right: -8px;
+                bottom: -8px;
+                border-width: 2px;
             }
 
-            .container h1::before {
-                font-size: 0.7em;
-                margin-bottom: 3px;
-            }
-
-            .container h2 {
-                font-size: 1.2em;
-            }
-
-            .container p {
-                font-size: 0.95em;
-                line-height: 1.6;
-                margin-bottom: 15px;
-            }
-
-            .arabic-text {
-                font-size: 1em;
-                margin: 12px 0;
-            }
-
-            .subtitle-greeting {
-                font-size: 0.9em;
-                margin-bottom: 15px;
-            }
-
-            .subtitle {
-                font-size: 0.85em;
-            }
-
-            .name-container {
-                padding: 40px 20px;
-                width: 100%;
-                max-width: 100%;
-            }
-
-            .name-container h1 {
-                font-size: 1.8em;
-            }
-
-            .name-container p {
-                font-size: 0.9em;
-                line-height: 1.5;
-            }
-
-            .submit-btn {
-                padding: 12px 20px;
-                font-size: 0.95em;
-            }
-
-            .kaabah-art {
-                font-size: 2em;
-            }
-
-            .emoji {
-                font-size: 3em;
-            }
-
-            .name-page-decor-left,
-            .name-page-decor-right {
-                font-size: 4em;
-                top: 20px;
-            }
-
-            .container-corner-tl,
-            .container-corner-tr,
-            .container-corner-bl,
-            .container-corner-br {
+            .container::after {
+                top: -35px;
                 font-size: 1.5em;
-                top: 10px;
-                bottom: 10px;
-                left: 10px;
-                right: 10px;
-            }
-
-            #namePage::after {
-                font-size: 1.8em;
-                right: 15px;
-                top: 10px;
-                letter-spacing: 10px;
-            }
-
-            .button-group {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .btn {
-                width: 100%;
-                padding: 10px 15px;
-                font-size: 0.9em;
-            }
-
-            .greeting {
-                font-size: 1.5em;
-                margin: 15px 0;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 40px 15px;
-                border-width: 8px;
+                letter-spacing: 15px;
             }
 
             .container h1 {
-                font-size: 1.7em;
-                margin-bottom: 6px;
+                font-size: 1.9em;
+                margin-bottom: 5px;
             }
 
             .container h1::before {
@@ -646,12 +552,13 @@
 
             .container h2 {
                 font-size: 1.1em;
+                margin: 8px 0;
             }
 
             .container p {
                 font-size: 0.88em;
                 line-height: 1.5;
-                margin-bottom: 12px;
+                margin-bottom: 10px;
             }
 
             .arabic-text {
@@ -660,33 +567,161 @@
             }
 
             .subtitle-greeting {
-                font-size: 0.85em;
-                margin-bottom: 12px;
+                font-size: 0.82em;
+                margin-bottom: 10px;
+            }
+
+            .subtitle {
+                font-size: 0.82em;
             }
 
             .name-container {
-                padding: 30px 15px;
+                padding: 35px 18px;
+                width: 100%;
+                max-width: 100%;
             }
 
             .name-container h1 {
-                font-size: 1.5em;
+                font-size: 1.8em;
             }
 
             .name-container p {
-                font-size: 0.85em;
+                font-size: 0.88em;
+                line-height: 1.5;
             }
 
             .submit-btn {
-                padding: 10px 15px;
+                padding: 11px 18px;
                 font-size: 0.9em;
             }
 
             .kaabah-art {
-                font-size: 1.5em;
+                font-size: 1.8em;
+                margin-bottom: 10px;
             }
 
             .emoji {
-                font-size: 2.5em;
+                font-size: 2.8em;
+                margin: 8px 0;
+            }
+
+            .name-page-decor-left,
+            .name-page-decor-right {
+                font-size: 3.5em;
+                top: 15px;
+            }
+
+            .container-corner-tl,
+            .container-corner-tr,
+            .container-corner-bl,
+            .container-corner-br {
+                font-size: 1.3em;
+                top: 8px;
+                bottom: 8px;
+                left: 8px;
+                right: 8px;
+            }
+
+            #namePage::after {
+                font-size: 1.6em;
+                right: 12px;
+                top: 8px;
+                letter-spacing: 8px;
+            }
+
+            .button-group {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 9px 12px;
+                font-size: 0.85em;
+            }
+
+            .greeting {
+                font-size: 1.4em;
+                margin: 12px 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 14px;
+                border-width: 7px;
+            }
+
+            .container::before {
+                top: -7px;
+                left: -7px;
+                right: -7px;
+                bottom: -7px;
+                border-width: 1.5px;
+            }
+
+            .container::after {
+                top: -30px;
+                font-size: 1.3em;
+                letter-spacing: 12px;
+            }
+
+            .container h1 {
+                font-size: 1.6em;
+                margin-bottom: 4px;
+            }
+
+            .container h1::before {
+                font-size: 0.6em;
+                margin-bottom: 1px;
+            }
+
+            .container h2 {
+                font-size: 1em;
+                margin: 6px 0;
+            }
+
+            .container p {
+                font-size: 0.82em;
+                line-height: 1.45;
+                margin-bottom: 8px;
+            }
+
+            .arabic-text {
+                font-size: 0.9em;
+                margin: 8px 0;
+            }
+
+            .subtitle-greeting {
+                font-size: 0.78em;
+                margin-bottom: 8px;
+            }
+
+            .name-container {
+                padding: 30px 14px;
+            }
+
+            .name-container h1 {
+                font-size: 1.6em;
+            }
+
+            .name-container p {
+                font-size: 0.82em;
+            }
+
+            .submit-btn {
+                padding: 10px 14px;
+                font-size: 0.85em;
+            }
+
+            .kaabah-art {
+                font-size: 1.6em;
+                margin-bottom: 8px;
+            }
+
+            .emoji {
+                font-size: 2.4em;
+                margin: 6px 0;
             }
 
             .name-page-decor-left,
@@ -698,90 +733,12 @@
             .container-corner-tr,
             .container-corner-bl,
             .container-corner-br {
-                font-size: 1.2em;
-            }
-
-            .greeting {
-                font-size: 1.3em;
-            }
-
-            .btn {
-                font-size: 0.85em;
-                padding: 9px 12px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 30px 12px;
-                border-width: 6px;
-            }
-
-            .container h1 {
-                font-size: 1.4em;
-                margin-bottom: 5px;
-            }
-
-            .container h1::before {
-                font-size: 0.6em;
-                margin-bottom: 2px;
-            }
-
-            .container p {
-                font-size: 0.82em;
-                line-height: 1.4;
-                margin-bottom: 10px;
-            }
-
-            .arabic-text {
-                font-size: 0.9em;
-                margin: 8px 0;
-            }
-
-            .subtitle-greeting {
-                font-size: 0.8em;
-                margin-bottom: 10px;
-            }
-
-            .name-container {
-                padding: 25px 12px;
-            }
-
-            .name-container h1 {
-                font-size: 1.3em;
-            }
-
-            .name-container p {
-                font-size: 0.8em;
-            }
-
-            .emoji {
-                font-size: 2em;
-            }
-
-            .kaabah-art {
-                font-size: 1.2em;
-            }
-
-            .name-page-decor-left,
-            .name-page-decor-right {
-                font-size: 2.5em;
+                font-size: 1.1em;
             }
 
             .greeting {
                 font-size: 1.2em;
-            }
-
-            .container-corner-tl,
-            .container-corner-tr,
-            .container-corner-bl,
-            .container-corner-br {
-                font-size: 1em;
-            }
-
-            #namePage::after {
-                font-size: 1.4em;
-                letter-spacing: 8px;
+                margin: 10px 0;
             }
 
             .btn {
@@ -790,14 +747,28 @@
             }
         }
 
-        @media (max-width: 380px) {
+        @media (max-width: 480px) {
             .container {
-                padding: 25px 10px;
-                border-width: 5px;
+                padding: 25px 12px;
+                border-width: 6px;
+            }
+
+            .container::before {
+                top: -6px;
+                left: -6px;
+                right: -6px;
+                bottom: -6px;
+            }
+
+            .container::after {
+                top: -25px;
+                font-size: 1.1em;
+                letter-spacing: 10px;
             }
 
             .container h1 {
-                font-size: 1.2em;
+                font-size: 1.4em;
+                margin-bottom: 3px;
             }
 
             .container h1::before {
@@ -806,14 +777,101 @@
 
             .container p {
                 font-size: 0.78em;
+                line-height: 1.4;
+                margin-bottom: 7px;
             }
 
             .arabic-text {
                 font-size: 0.85em;
+                margin: 7px 0;
+            }
+
+            .subtitle-greeting {
+                font-size: 0.75em;
+                margin-bottom: 7px;
+            }
+
+            .name-container {
+                padding: 25px 12px;
+            }
+
+            .name-container h1 {
+                font-size: 1.4em;
+            }
+
+            .name-container p {
+                font-size: 0.78em;
+            }
+
+            .emoji {
+                font-size: 2em;
+                margin: 5px 0;
+            }
+
+            .kaabah-art {
+                font-size: 1.3em;
+                margin-bottom: 6px;
+            }
+
+            .name-page-decor-left,
+            .name-page-decor-right {
+                font-size: 2.5em;
+            }
+
+            .greeting {
+                font-size: 1.1em;
+                margin: 8px 0;
+            }
+
+            .container-corner-tl,
+            .container-corner-tr,
+            .container-corner-bl,
+            .container-corner-br {
+                font-size: 0.95em;
+            }
+
+            #namePage::after {
+                font-size: 1.2em;
+                letter-spacing: 6px;
+            }
+
+            .btn {
+                font-size: 0.75em;
+                padding: 7px 10px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .container {
+                padding: 22px 10px;
+                border-width: 5px;
+            }
+
+            .container h1 {
+                font-size: 1.2em;
+            }
+
+            .container h1::before {
+                font-size: 0.52em;
+            }
+
+            .container p {
+                font-size: 0.75em;
+                margin-bottom: 6px;
+            }
+
+            .arabic-text {
+                font-size: 0.8em;
             }
 
             .emoji {
                 font-size: 1.8em;
+            }
+
+            .container::after {
+                top: -22px;
+                font-size: 1em;
+                letter-spacing: 8px;
             }
         }
     </style>
