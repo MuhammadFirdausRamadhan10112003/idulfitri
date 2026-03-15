@@ -331,6 +331,12 @@
             border-image: linear-gradient(135deg, #1e7e34 0%, #b8860b 50%, #1e7e34 100%) 1;
             box-sizing: border-box;
             overflow-y: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .container::-webkit-scrollbar {
+            display: none;
         }
 
         .container::before {
