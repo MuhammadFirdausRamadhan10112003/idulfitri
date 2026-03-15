@@ -270,36 +270,38 @@
 
         .lantern {
             position: absolute;
-            width: 22px;
-            height: 30px;
-            border: 1.5px solid #ffd700;
+            width: 20px;
+            height: 28px;
+            border: 1px solid #ffd700;
             border-radius: 50% 50% 40% 40%;
-            background: radial-gradient(circle at 30% 30%, rgba(255, 215, 0, 0.7), rgba(255, 165, 0, 0.5));
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.6), inset 0 0 8px rgba(255, 215, 0, 0.4);
-            animation: swing 3s ease-in-out infinite;
-            opacity: 0.6;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 215, 0, 0.5), rgba(255, 165, 0, 0.3));
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+            animation: swing 4s ease-in-out infinite;
+            opacity: 0.4;
+            pointer-events: none;
         }
 
         .lantern::before {
             content: '';
             position: absolute;
-            top: -8px;
+            top: -6px;
             left: 50%;
             transform: translateX(-50%);
-            width: 6px;
-            height: 8px;
+            width: 5px;
+            height: 6px;
             background: #8b4513;
-            border-radius: 2px;
+            border-radius: 1px;
         }
 
         .ketupat {
             position: absolute;
-            width: 18px;
-            height: 26px;
+            width: 16px;
+            height: 24px;
             background: linear-gradient(45deg, #2ecc71 0%, #27ae60 100%);
             clip-path: polygon(50% 0%, 100% 38%, 50% 100%, 0% 38%);
-            opacity: 0.5;
-            animation: float 4s ease-in-out infinite;
+            opacity: 0.35;
+            animation: float 5s ease-in-out infinite;
+            pointer-events: none;
         }
 
         @keyframes swing {
@@ -317,17 +319,16 @@
             z-index: 10;
             text-align: center;
             background: #f5f5f0;
-            padding: 80px 60px;
+            padding: 70px 50px;
             border-radius: 0;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 750px;
-            width: 95%;
-            max-height: 90vh;
+            max-width: 700px;
+            width: 90%;
+            max-height: 85vh;
             margin: 0 auto;
             animation: fadeIn 1s ease-in;
-            border: 15px solid;
+            border: 12px solid;
             border-image: linear-gradient(135deg, #1e7e34 0%, #b8860b 50%, #1e7e34 100%) 1;
-            position: relative;
             box-sizing: border-box;
             overflow-y: auto;
         }
@@ -505,25 +506,85 @@
         }
 
         @media (max-width: 768px) {
-            body {
-                padding: 5px;
-            }
-
-            .page {
-                width: 100vw;
-                height: 100vh;
-                max-width: 100%;
-                padding: 0;
-            }
-
             .container {
-                padding: 35px 18px;
-                width: 100%;
-                max-width: 100%;
-                margin: 0;
+                padding: 40px 25px;
+                width: 92%;
+                max-height: 80vh;
+                border-width: 10px;
+            }
+
+            .container::before {
+                top: -10px;
+                left: -10px;
+                right: -10px;
+                bottom: -10px;
+                border-width: 2px;
+            }
+
+            .container::after {
+                top: -32px;
+                font-size: 1.4em;
+                letter-spacing: 12px;
+            }
+
+            .container h1 {
+                font-size: 2em;
+                margin-bottom: 8px;
+            }
+
+            .container h1::before {
+                font-size: 0.7em;
+                margin-bottom: 3px;
+            }
+
+            .container h2 {
+                font-size: 1.2em;
+                margin: 8px 0;
+            }
+
+            .container p {
+                font-size: 0.95em;
+                line-height: 1.6;
+                margin-bottom: 12px;
+            }
+
+            .arabic-text {
+                font-size: 1.1em;
+                margin: 12px 0;
+            }
+
+            .subtitle-greeting {
+                font-size: 0.9em;
+                margin-bottom: 12px;
+            }
+
+            .subtitle {
+                font-size: 0.9em;
+            }
+
+            .container-corner-tl,
+            .container-corner-tr,
+            .container-corner-bl,
+            .container-corner-br {
+                font-size: 1.5em;
+                top: 12px;
+                bottom: 12px;
+                left: 12px;
+                right: 12px;
+            }
+
+            .greeting {
+                font-size: 1.5em;
+                margin: 15px 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 35px 20px;
+                width: 94%;
+                max-height: 75vh;
                 border-width: 8px;
-                max-height: 100vh;
-                overflow-y: auto;
             }
 
             .container::before {
@@ -531,18 +592,18 @@
                 left: -8px;
                 right: -8px;
                 bottom: -8px;
-                border-width: 2px;
+                border-width: 1.5px;
             }
 
             .container::after {
-                top: -35px;
-                font-size: 1.5em;
-                letter-spacing: 15px;
+                top: -28px;
+                font-size: 1.2em;
+                letter-spacing: 10px;
             }
 
             .container h1 {
-                font-size: 1.9em;
-                margin-bottom: 5px;
+                font-size: 1.7em;
+                margin-bottom: 6px;
             }
 
             .container h1::before {
@@ -552,103 +613,45 @@
 
             .container h2 {
                 font-size: 1.1em;
-                margin: 8px 0;
+                margin: 6px 0;
             }
 
             .container p {
                 font-size: 0.88em;
-                line-height: 1.5;
+                line-height: 1.55;
                 margin-bottom: 10px;
             }
 
             .arabic-text {
-                font-size: 0.95em;
+                font-size: 1em;
                 margin: 10px 0;
             }
 
             .subtitle-greeting {
-                font-size: 0.82em;
+                font-size: 0.85em;
                 margin-bottom: 10px;
-            }
-
-            .subtitle {
-                font-size: 0.82em;
-            }
-
-            .name-container {
-                padding: 35px 18px;
-                width: 100%;
-                max-width: 100%;
-            }
-
-            .name-container h1 {
-                font-size: 1.8em;
-            }
-
-            .name-container p {
-                font-size: 0.88em;
-                line-height: 1.5;
-            }
-
-            .submit-btn {
-                padding: 11px 18px;
-                font-size: 0.9em;
-            }
-
-            .kaabah-art {
-                font-size: 1.8em;
-                margin-bottom: 10px;
-            }
-
-            .emoji {
-                font-size: 2.8em;
-                margin: 8px 0;
-            }
-
-            .name-page-decor-left,
-            .name-page-decor-right {
-                font-size: 3.5em;
-                top: 15px;
             }
 
             .container-corner-tl,
             .container-corner-tr,
             .container-corner-bl,
             .container-corner-br {
-                font-size: 1.3em;
-                top: 8px;
-                bottom: 8px;
-                left: 8px;
-                right: 8px;
-            }
-
-            #namePage::after {
-                font-size: 1.6em;
-                right: 12px;
-                top: 8px;
-                letter-spacing: 8px;
-            }
-
-            .button-group {
-                flex-direction: column;
-                gap: 8px;
-            }
-
-            .btn {
-                width: 100%;
-                padding: 9px 12px;
-                font-size: 0.85em;
+                font-size: 1.2em;
+                top: 10px;
+                bottom: 10px;
             }
 
             .greeting {
-                font-size: 1.4em;
+                font-size: 1.3em;
                 margin: 12px 0;
             }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 480px) {
             .container {
-                padding: 30px 14px;
+                padding: 30px 16px;
+                width: 96%;
+                max-height: 70vh;
                 border-width: 7px;
             }
 
@@ -657,18 +660,17 @@
                 left: -7px;
                 right: -7px;
                 bottom: -7px;
-                border-width: 1.5px;
             }
 
             .container::after {
-                top: -30px;
-                font-size: 1.3em;
-                letter-spacing: 12px;
+                top: -25px;
+                font-size: 1.1em;
+                letter-spacing: 8px;
             }
 
             .container h1 {
-                font-size: 1.6em;
-                margin-bottom: 4px;
+                font-size: 1.5em;
+                margin-bottom: 5px;
             }
 
             .container h1::before {
@@ -676,57 +678,20 @@
                 margin-bottom: 1px;
             }
 
-            .container h2 {
-                font-size: 1em;
-                margin: 6px 0;
-            }
-
             .container p {
                 font-size: 0.82em;
-                line-height: 1.45;
+                line-height: 1.5;
                 margin-bottom: 8px;
             }
 
             .arabic-text {
-                font-size: 0.9em;
+                font-size: 0.95em;
                 margin: 8px 0;
             }
 
             .subtitle-greeting {
-                font-size: 0.78em;
+                font-size: 0.8em;
                 margin-bottom: 8px;
-            }
-
-            .name-container {
-                padding: 30px 14px;
-            }
-
-            .name-container h1 {
-                font-size: 1.6em;
-            }
-
-            .name-container p {
-                font-size: 0.82em;
-            }
-
-            .submit-btn {
-                padding: 10px 14px;
-                font-size: 0.85em;
-            }
-
-            .kaabah-art {
-                font-size: 1.6em;
-                margin-bottom: 8px;
-            }
-
-            .emoji {
-                font-size: 2.4em;
-                margin: 6px 0;
-            }
-
-            .name-page-decor-left,
-            .name-page-decor-right {
-                font-size: 3em;
             }
 
             .container-corner-tl,
@@ -734,22 +699,21 @@
             .container-corner-bl,
             .container-corner-br {
                 font-size: 1.1em;
+                top: 8px;
+                bottom: 8px;
             }
 
             .greeting {
                 font-size: 1.2em;
                 margin: 10px 0;
             }
-
-            .btn {
-                font-size: 0.8em;
-                padding: 8px 10px;
-            }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 380px) {
             .container {
                 padding: 25px 12px;
+                width: 97%;
+                max-height: 65vh;
                 border-width: 6px;
             }
 
@@ -761,14 +725,14 @@
             }
 
             .container::after {
-                top: -25px;
-                font-size: 1.1em;
-                letter-spacing: 10px;
+                top: -22px;
+                font-size: 0.95em;
+                letter-spacing: 6px;
             }
 
             .container h1 {
-                font-size: 1.4em;
-                margin-bottom: 3px;
+                font-size: 1.3em;
+                margin-bottom: 4px;
             }
 
             .container h1::before {
@@ -777,50 +741,17 @@
 
             .container p {
                 font-size: 0.78em;
-                line-height: 1.4;
+                line-height: 1.45;
                 margin-bottom: 7px;
             }
 
             .arabic-text {
-                font-size: 0.85em;
+                font-size: 0.9em;
                 margin: 7px 0;
             }
 
             .subtitle-greeting {
                 font-size: 0.75em;
-                margin-bottom: 7px;
-            }
-
-            .name-container {
-                padding: 25px 12px;
-            }
-
-            .name-container h1 {
-                font-size: 1.4em;
-            }
-
-            .name-container p {
-                font-size: 0.78em;
-            }
-
-            .emoji {
-                font-size: 2em;
-                margin: 5px 0;
-            }
-
-            .kaabah-art {
-                font-size: 1.3em;
-                margin-bottom: 6px;
-            }
-
-            .name-page-decor-left,
-            .name-page-decor-right {
-                font-size: 2.5em;
-            }
-
-            .greeting {
-                font-size: 1.1em;
-                margin: 8px 0;
             }
 
             .container-corner-tl,
@@ -828,50 +759,6 @@
             .container-corner-bl,
             .container-corner-br {
                 font-size: 0.95em;
-            }
-
-            #namePage::after {
-                font-size: 1.2em;
-                letter-spacing: 6px;
-            }
-
-            .btn {
-                font-size: 0.75em;
-                padding: 7px 10px;
-            }
-        }
-
-        @media (max-width: 380px) {
-            .container {
-                padding: 22px 10px;
-                border-width: 5px;
-            }
-
-            .container h1 {
-                font-size: 1.2em;
-            }
-
-            .container h1::before {
-                font-size: 0.52em;
-            }
-
-            .container p {
-                font-size: 0.75em;
-                margin-bottom: 6px;
-            }
-
-            .arabic-text {
-                font-size: 0.8em;
-            }
-
-            .emoji {
-                font-size: 1.8em;
-            }
-
-            .container::after {
-                top: -22px;
-                font-size: 1em;
-                letter-spacing: 8px;
             }
         }
     </style>
