@@ -162,10 +162,13 @@
             border-radius: 20px;
             box-shadow: 0 30px 80px rgba(184, 134, 11, 0.3);
             max-width: 650px;
+            width: 95%;
+            margin: 0 auto;
             animation: fadeIn 1s ease-in;
             position: relative;
             z-index: 50;
             border: 3px solid #b8860b;
+            box-sizing: border-box;
         }
 
         .kaabah-art {
@@ -317,13 +320,15 @@
             border-radius: 0;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             max-width: 750px;
-            width: 90%;
+            width: 95%;
+            max-height: 90vh;
             margin: 0 auto;
             animation: fadeIn 1s ease-in;
             border: 15px solid;
             border-image: linear-gradient(135deg, #1e7e34 0%, #b8860b 50%, #1e7e34 100%) 1;
             position: relative;
             box-sizing: border-box;
+            overflow-y: auto;
         }
 
         .container::before {
@@ -500,44 +505,58 @@
 
         @media (max-width: 768px) {
             body {
-                padding: 20px;
+                padding: 10px;
             }
 
             .page {
                 width: 100vw;
                 height: 100vh;
                 max-width: 100%;
+                padding: 0;
             }
 
             .container {
-                padding: 40px 20px;
+                padding: 50px 20px;
                 width: 100%;
                 max-width: 100%;
-                margin: 0 auto;
-                border-width: 8px;
+                margin: 0;
+                border-width: 10px;
+                max-height: 100vh;
+                overflow-y: auto;
             }
 
             .container h1 {
-                font-size: 1.8em;
-                margin-bottom: 10px;
+                font-size: 2em;
+                margin-bottom: 8px;
+            }
+
+            .container h1::before {
+                font-size: 0.7em;
+                margin-bottom: 3px;
             }
 
             .container h2 {
-                font-size: 1.4em;
+                font-size: 1.2em;
             }
 
             .container p {
                 font-size: 0.95em;
                 line-height: 1.6;
+                margin-bottom: 15px;
             }
 
             .arabic-text {
-                font-size: 1.2em;
-                margin: 15px 0;
+                font-size: 1em;
+                margin: 12px 0;
+            }
+
+            .subtitle-greeting {
+                font-size: 0.9em;
+                margin-bottom: 15px;
             }
 
             .subtitle {
-                font-size: 0.9em;
+                font-size: 0.85em;
             }
 
             .name-container {
@@ -551,12 +570,13 @@
             }
 
             .name-container p {
-                font-size: 0.95em;
+                font-size: 0.9em;
+                line-height: 1.5;
             }
 
             .submit-btn {
                 padding: 12px 20px;
-                font-size: 1em;
+                font-size: 0.95em;
             }
 
             .kaabah-art {
@@ -570,6 +590,7 @@
             .name-page-decor-left,
             .name-page-decor-right {
                 font-size: 4em;
+                top: 20px;
             }
 
             .container-corner-tl,
@@ -577,46 +598,70 @@
             .container-corner-bl,
             .container-corner-br {
                 font-size: 1.5em;
+                top: 10px;
+                bottom: 10px;
+                left: 10px;
+                right: 10px;
             }
 
             #namePage::after {
                 font-size: 1.8em;
-                right: 20px;
-                top: 15px;
+                right: 15px;
+                top: 10px;
+                letter-spacing: 10px;
             }
 
             .button-group {
                 flex-direction: column;
+                gap: 10px;
             }
 
             .btn {
                 width: 100%;
+                padding: 10px 15px;
+                font-size: 0.9em;
+            }
+
+            .greeting {
+                font-size: 1.5em;
+                margin: 15px 0;
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 600px) {
             .container {
-                padding: 30px 15px;
-                border-width: 6px;
+                padding: 40px 15px;
+                border-width: 8px;
             }
 
             .container h1 {
-                font-size: 1.5em;
-                margin-bottom: 8px;
+                font-size: 1.7em;
+                margin-bottom: 6px;
+            }
+
+            .container h1::before {
+                font-size: 0.65em;
+                margin-bottom: 2px;
             }
 
             .container h2 {
-                font-size: 1.2em;
+                font-size: 1.1em;
             }
 
             .container p {
-                font-size: 0.9em;
+                font-size: 0.88em;
                 line-height: 1.5;
+                margin-bottom: 12px;
             }
 
             .arabic-text {
-                font-size: 1em;
+                font-size: 0.95em;
                 margin: 10px 0;
+            }
+
+            .subtitle-greeting {
+                font-size: 0.85em;
+                margin-bottom: 12px;
             }
 
             .name-container {
@@ -633,7 +678,7 @@
 
             .submit-btn {
                 padding: 10px 15px;
-                font-size: 0.95em;
+                font-size: 0.9em;
             }
 
             .kaabah-art {
@@ -656,8 +701,119 @@
                 font-size: 1.2em;
             }
 
+            .greeting {
+                font-size: 1.3em;
+            }
+
+            .btn {
+                font-size: 0.85em;
+                padding: 9px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 12px;
+                border-width: 6px;
+            }
+
+            .container h1 {
+                font-size: 1.4em;
+                margin-bottom: 5px;
+            }
+
+            .container h1::before {
+                font-size: 0.6em;
+                margin-bottom: 2px;
+            }
+
+            .container p {
+                font-size: 0.82em;
+                line-height: 1.4;
+                margin-bottom: 10px;
+            }
+
+            .arabic-text {
+                font-size: 0.9em;
+                margin: 8px 0;
+            }
+
+            .subtitle-greeting {
+                font-size: 0.8em;
+                margin-bottom: 10px;
+            }
+
+            .name-container {
+                padding: 25px 12px;
+            }
+
+            .name-container h1 {
+                font-size: 1.3em;
+            }
+
+            .name-container p {
+                font-size: 0.8em;
+            }
+
+            .emoji {
+                font-size: 2em;
+            }
+
+            .kaabah-art {
+                font-size: 1.2em;
+            }
+
+            .name-page-decor-left,
+            .name-page-decor-right {
+                font-size: 2.5em;
+            }
+
+            .greeting {
+                font-size: 1.2em;
+            }
+
+            .container-corner-tl,
+            .container-corner-tr,
+            .container-corner-bl,
+            .container-corner-br {
+                font-size: 1em;
+            }
+
             #namePage::after {
-                font-size: 1.5em;
+                font-size: 1.4em;
+                letter-spacing: 8px;
+            }
+
+            .btn {
+                font-size: 0.8em;
+                padding: 8px 10px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .container {
+                padding: 25px 10px;
+                border-width: 5px;
+            }
+
+            .container h1 {
+                font-size: 1.2em;
+            }
+
+            .container h1::before {
+                font-size: 0.55em;
+            }
+
+            .container p {
+                font-size: 0.78em;
+            }
+
+            .arabic-text {
+                font-size: 0.85em;
+            }
+
+            .emoji {
+                font-size: 1.8em;
             }
         }
     </style>
