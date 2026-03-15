@@ -317,10 +317,13 @@
             border-radius: 0;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             max-width: 750px;
+            width: 90%;
+            margin: 0 auto;
             animation: fadeIn 1s ease-in;
             border: 15px solid;
             border-image: linear-gradient(135deg, #1e7e34 0%, #b8860b 50%, #1e7e34 100%) 1;
             position: relative;
+            box-sizing: border-box;
         }
 
         .container::before {
@@ -495,18 +498,91 @@
             50% { transform: translateY(-20px); }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+
+            .page {
+                width: 100vw;
+                height: 100vh;
+                max-width: 100%;
+            }
+
             .container {
-                padding: 40px 25px;
-                max-width: 90%;
+                padding: 40px 20px;
+                width: 100%;
+                max-width: 100%;
+                margin: 0 auto;
+                border-width: 8px;
             }
 
             .container h1 {
-                font-size: 2em;
+                font-size: 1.8em;
+                margin-bottom: 10px;
+            }
+
+            .container h2 {
+                font-size: 1.4em;
             }
 
             .container p {
+                font-size: 0.95em;
+                line-height: 1.6;
+            }
+
+            .arabic-text {
+                font-size: 1.2em;
+                margin: 15px 0;
+            }
+
+            .subtitle {
+                font-size: 0.9em;
+            }
+
+            .name-container {
+                padding: 40px 20px;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .name-container h1 {
+                font-size: 1.8em;
+            }
+
+            .name-container p {
+                font-size: 0.95em;
+            }
+
+            .submit-btn {
+                padding: 12px 20px;
                 font-size: 1em;
+            }
+
+            .kaabah-art {
+                font-size: 2em;
+            }
+
+            .emoji {
+                font-size: 3em;
+            }
+
+            .name-page-decor-left,
+            .name-page-decor-right {
+                font-size: 4em;
+            }
+
+            .container-corner-tl,
+            .container-corner-tr,
+            .container-corner-bl,
+            .container-corner-br {
+                font-size: 1.5em;
+            }
+
+            #namePage::after {
+                font-size: 1.8em;
+                right: 20px;
+                top: 15px;
             }
 
             .button-group {
@@ -515,6 +591,73 @@
 
             .btn {
                 width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 15px;
+                border-width: 6px;
+            }
+
+            .container h1 {
+                font-size: 1.5em;
+                margin-bottom: 8px;
+            }
+
+            .container h2 {
+                font-size: 1.2em;
+            }
+
+            .container p {
+                font-size: 0.9em;
+                line-height: 1.5;
+            }
+
+            .arabic-text {
+                font-size: 1em;
+                margin: 10px 0;
+            }
+
+            .name-container {
+                padding: 30px 15px;
+            }
+
+            .name-container h1 {
+                font-size: 1.5em;
+            }
+
+            .name-container p {
+                font-size: 0.85em;
+            }
+
+            .submit-btn {
+                padding: 10px 15px;
+                font-size: 0.95em;
+            }
+
+            .kaabah-art {
+                font-size: 1.5em;
+            }
+
+            .emoji {
+                font-size: 2.5em;
+            }
+
+            .name-page-decor-left,
+            .name-page-decor-right {
+                font-size: 3em;
+            }
+
+            .container-corner-tl,
+            .container-corner-tr,
+            .container-corner-bl,
+            .container-corner-br {
+                font-size: 1.2em;
+            }
+
+            #namePage::after {
+                font-size: 1.5em;
             }
         }
     </style>
