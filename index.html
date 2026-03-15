@@ -162,13 +162,14 @@
             border-radius: 20px;
             box-shadow: 0 30px 80px rgba(184, 134, 11, 0.3);
             max-width: 650px;
-            width: 95%;
+            width: 90%;
             margin: 0 auto;
             animation: fadeIn 1s ease-in;
             position: relative;
             z-index: 50;
             border: 3px solid #b8860b;
             box-sizing: border-box;
+            min-height: auto;
         }
 
         .kaabah-art {
@@ -519,6 +520,40 @@
                 border-width: 10px;
             }
 
+            .name-container {
+                padding: 45px 30px;
+                width: 92%;
+                border-radius: 15px;
+            }
+
+            .name-container h1 {
+                font-size: 2em;
+                margin-bottom: 8px;
+            }
+
+            .name-container .subtitle {
+                font-size: 0.95em;
+                margin-bottom: 15px;
+            }
+
+            .name-container p {
+                font-size: 0.92em;
+                line-height: 1.5;
+                margin-bottom: 15px;
+            }
+
+            .emoji {
+                font-size: 2.8em;
+                margin-bottom: 12px;
+            }
+
+            .container {
+                padding: 40px 25px;
+                width: 92%;
+                max-height: 80vh;
+                border-width: 10px;
+            }
+
             .container::before {
                 top: -10px;
                 left: -10px;
@@ -586,6 +621,40 @@
         }
 
         @media (max-width: 600px) {
+            .container {
+                padding: 35px 20px;
+                width: 94%;
+                max-height: 75vh;
+                border-width: 8px;
+            }
+
+            .name-container {
+                padding: 40px 25px;
+                width: 94%;
+                border-radius: 12px;
+            }
+
+            .name-container h1 {
+                font-size: 1.7em;
+                margin-bottom: 6px;
+            }
+
+            .name-container .subtitle {
+                font-size: 0.88em;
+                margin-bottom: 12px;
+            }
+
+            .name-container p {
+                font-size: 0.85em;
+                line-height: 1.45;
+                margin-bottom: 12px;
+            }
+
+            .emoji {
+                font-size: 2.4em;
+                margin-bottom: 10px;
+            }
+
             .container {
                 padding: 35px 20px;
                 width: 94%;
@@ -661,6 +730,40 @@
                 border-width: 7px;
             }
 
+            .name-container {
+                padding: 35px 20px;
+                width: 96%;
+                border-radius: 10px;
+            }
+
+            .name-container h1 {
+                font-size: 1.5em;
+                margin-bottom: 5px;
+            }
+
+            .name-container .subtitle {
+                font-size: 0.8em;
+                margin-bottom: 10px;
+            }
+
+            .name-container p {
+                font-size: 0.8em;
+                line-height: 1.4;
+                margin-bottom: 10px;
+            }
+
+            .emoji {
+                font-size: 2em;
+                margin-bottom: 8px;
+            }
+
+            .container {
+                padding: 30px 16px;
+                width: 96%;
+                max-height: 70vh;
+                border-width: 7px;
+            }
+
             .container::before {
                 top: -7px;
                 left: -7px;
@@ -716,6 +819,40 @@
         }
 
         @media (max-width: 380px) {
+            .container {
+                padding: 25px 12px;
+                width: 97%;
+                max-height: 65vh;
+                border-width: 6px;
+            }
+
+            .name-container {
+                padding: 30px 16px;
+                width: 97%;
+                border-radius: 8px;
+            }
+
+            .name-container h1 {
+                font-size: 1.3em;
+                margin-bottom: 4px;
+            }
+
+            .name-container .subtitle {
+                font-size: 0.75em;
+                margin-bottom: 8px;
+            }
+
+            .name-container p {
+                font-size: 0.75em;
+                line-height: 1.35;
+                margin-bottom: 8px;
+            }
+
+            .emoji {
+                font-size: 1.8em;
+                margin-bottom: 6px;
+            }
+
             .container {
                 padding: 25px 12px;
                 width: 97%;
@@ -825,8 +962,7 @@
                 return;
             }
 
-            // Simpan nama ke session storage (hanya untuk sesi ini)
-            sessionStorage.setItem('userNameIdul', nameInput);
+            // Jangan simpan ke session storage - langsung ke halaman ucapan
             
             // Tampilkan nama di halaman ucapan
             document.getElementById('userName').textContent = nameInput;
@@ -839,19 +975,12 @@
             startMusic();
         }
 
-        // Cek apakah ada nama yang tersimpan di session (dalam satu sesi browser)
+        // Always clear session on page load - jangan mengingat nama
         window.addEventListener('load', () => {
-            const savedName = sessionStorage.getItem('userNameIdul');
-            if (savedName) {
-                document.getElementById('userName').textContent = savedName;
-                document.getElementById('namePage').classList.remove('active');
-                document.getElementById('greetingPage').classList.add('active');
-                startMusic();
-            } else {
-                // Jika tidak ada nama, tampilkan halaman input
-                document.getElementById('namePage').classList.add('active');
-                document.getElementById('greetingPage').classList.remove('active');
-            }
+            sessionStorage.removeItem('userNameIdul');
+            // Selalu tampilkan halaman input nama
+            document.getElementById('namePage').classList.add('active');
+            document.getElementById('greetingPage').classList.remove('active');
         });
 
         // Clear session ketika tab ditutup atau browser ditutup
